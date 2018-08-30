@@ -1,5 +1,5 @@
 {
-  "name": "vue-download-image",
+  "name": "vue-html2image-download",
   "version": "1.0.0",
   "description": "一个vue.js的directive，能够将html转化成图片并下载。",
   "main": "lib/index.js",
