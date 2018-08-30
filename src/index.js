@@ -1,7 +1,9 @@
-import downImage from './main';
+import downImage from './down-image';
+import downPdf from './down-pdf';
 
 const install = (Vue) => {
   Vue.directive(downImage.name, downImage.directive(Vue));
+  Vue.directive(downPdf.name, downPdf);
 };
 
 export default {

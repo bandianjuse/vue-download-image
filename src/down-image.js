@@ -7,6 +7,7 @@ const addHrefAttr = (el, downLabelEl) => {
       const img = canvas.toDataURL('image/jpeg');
 
       downLabelEl.setAttribute('href', img);
+      downLabelEl.setAttribute('download', el.name);
     });
   });
 };
@@ -15,10 +16,11 @@ export default {
   name: 'download-image',
   directive(Vue) {
     return {
-      bind(el) {
+      bind(el, binding) {
         Vue.nextTick(() => {
           let isDownLabel = false;
 
+          el.name = (binding.value && binding.value.title) || '未命名';
           el.childNodes.forEach((node) => {
             if (node.nodeType === 1 && node.getAttribute('download') !== null) {
               addHrefAttr(el, node);
@@ -31,7 +33,7 @@ export default {
             const text = document.createTextNode('下载图片');
 
             aEl.appendChild(text);
-            aEl.setAttribute('download', '');
+            aEl.setAttribute('download', el.name);
             aEl.setAttribute('href', '#');
             aEl.setAttribute('class', 'down-label');
             aEl.setAttribute('data-html2canvas-ignore', '');

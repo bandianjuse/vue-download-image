@@ -8,7 +8,7 @@
     "lib"
   ],
   "scripts": {
-    "build": "babel src -d lib",
+    "build": "babel src -d lib && webpack",
     "dev": "webpack"
   },
   "repository": {
@@ -26,12 +26,21 @@
   },
   "homepage": "https://github.com/bandianjuse/vue-download-image#readme",
   "dependencies": {
-    "html2canvas": "^1.0.0-alpha.12"
+    "html2canvas": "^1.0.0-alpha.12",
+    "jspdf": "^1.4.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
     "babel-loader": "^7.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.22.1",
+    "vue": "^2.5.17",
+    "vue-html-loader": "^1.2.4",
+    "vue-loader": "^15.4.1",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.5.17",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0"
   }
