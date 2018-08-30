@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        .box{
+            border: 1px solid #ccc;
+            width: 300px;
+            text-align: center;
+        }
+        .down-label{
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #ccc;
+            display: block;
+            width: 100px;
+            margin: 10px auto;
+            text-decoration: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div class="box" v-download-image>
+        <div>这里是要转化的内容！</div>
+        <canvas id="myCanvas"></canvas>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script src="./index.js"></script>
+<script>
+    new Vue({
+        el: '#app'
+    })
+
+    var c=document.getElementById("myCanvas");
+    var ctx=c.getContext("2d");
+
+    // 创建渐变
+    var grd=ctx.createRadialGradient(75,50,5,90,60,100);
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+
+    // 填充渐变
+    ctx.fillStyle=grd;
+    ctx.fillRect(10,10,280,80);
+</script>
+</body>
+</html>

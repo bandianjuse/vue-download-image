@@ -7,7 +7,7 @@ const install = (Vue) => {
 export default {
   install,
 };
-// if (typeof window !== 'undefined' && window.Vue) {
-//   install(window.Vue);
-// }
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue);
+}
 
