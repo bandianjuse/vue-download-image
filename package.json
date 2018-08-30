@@ -1,0 +1,34 @@
+{
+  "name": "vue-download-image",
+  "version": "1.0.0",
+  "description": "一个vue.js的directive，能够将html转化成图片并下载。",
+  "main": "lib/index.js",
+  "files": [
+    "src",
+    "lib"
+  ],
+  "scripts": {
+    "build": "babel src -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bandianjuse/vue-download-image.git"
+  },
+  "keywords": [
+    "vue.js",
+    "directive"
+  ],
+  "author": "bandianjuse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bandianjuse/vue-download-image/issues"
+  },
+  "homepage": "https://github.com/bandianjuse/vue-download-image#readme",
+  "dependencies": {
+    "html2canvas": "^1.0.0-alpha.12"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
