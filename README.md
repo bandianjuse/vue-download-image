@@ -1,4 +1,4 @@
-# vue-download-image
+# vue-d-img-down
 
 > 一个vue.js的directive，能够将html转化成图片并下载
 
@@ -7,15 +7,15 @@
 
 
 ```sh
-$ npm i vue-download-image --save
+$ npm i vue-d-img-down --save
 ```
 
 ## 引入
 
 ```js
-import VueDownloadImage from 'vue-download-image';
+import ImageDownload from 'vue-d-img-down';
 
-Vue.use(VueDownloadImage);
+Vue.use(ImageDownload);
 ```
 
 ## 使用
