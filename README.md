@@ -1,21 +1,21 @@
-# vue-d-img-down
+# vue-directive-pdf-download
 
-> 一个vue.js的directive，能够将html转化成图片并下载
+> 一个vue.js的directive，能够将html转化成pdf和图片并下载
 
 
 ## 安装
 
 
 ```sh
-$ npm i vue-d-img-down --save
+$ npm i vue-directive-pdf-download --save
 ```
 
 ## 引入
 
 ```js
-import ImageDownload from 'vue-d-img-down';
+import PdfDownload from 'vue-directive-pdf-download';
 
-Vue.use(ImageDownload);
+Vue.use(PdfDownload);
 ```
 
 ## 使用
