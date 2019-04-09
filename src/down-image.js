@@ -34,7 +34,7 @@ const handleDownload = (el, binding) => {
     el.appendChild(aEl);
     addHrefAttr(el, aEl);
   }
-})
+}
 export default {
   name: 'download-image',
   directive(Vue) {
