@@ -11,37 +11,40 @@ const addHrefAttr = (el, downLabelEl) => {
     });
   });
 };
+const handleDownload = (el, binding) => {
+  let isDownLabel = false;
 
+  el.name = (binding.value && binding.value.title) || '未命名';
+  el.childNodes.forEach((node) => {
+    if (node.nodeType === 1 && node.getAttribute('download') !== null) {
+      addHrefAttr(el, node);
+      isDownLabel = true;
+    }
+  });
+
+  if (!isDownLabel) {
+    const aEl = document.createElement('a');
+    const text = document.createTextNode('下载图片');
+
+    aEl.appendChild(text);
+    aEl.setAttribute('download', el.name);
+    aEl.setAttribute('href', '#');
+    aEl.setAttribute('class', 'down-label');
+    aEl.setAttribute('data-html2canvas-ignore', '');
+    el.appendChild(aEl);
+    addHrefAttr(el, aEl);
+  }
+})
 export default {
   name: 'download-image',
   directive(Vue) {
     return {
       bind(el, binding) {
-        Vue.nextTick(() => {
-          let isDownLabel = false;
-
-          el.name = (binding.value && binding.value.title) || '未命名';
-          el.childNodes.forEach((node) => {
-            if (node.nodeType === 1 && node.getAttribute('download') !== null) {
-              addHrefAttr(el, node);
-              isDownLabel = true;
-            }
-          });
-
-          if (!isDownLabel) {
-            const aEl = document.createElement('a');
-            const text = document.createTextNode('下载图片');
-
-            aEl.appendChild(text);
-            aEl.setAttribute('download', el.name);
-            aEl.setAttribute('href', '#');
-            aEl.setAttribute('class', 'down-label');
-            aEl.setAttribute('data-html2canvas-ignore', '');
-            el.appendChild(aEl);
-            addHrefAttr(el, aEl);
-          }
-        });
+        Vue.nextTick(() => handleDownload(el, binding));
       },
+      update(el, binding) {
+        Vue.nextTick(() => handleDownload(el, binding));
+      }
     };
   },
 };
